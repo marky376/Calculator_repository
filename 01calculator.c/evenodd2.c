@@ -8,6 +8,11 @@ int evenoddchecker(int n)
 		printf("Please enter a number which is greater than zero(0) ");
 		scanf("%d", &n);
 	}
+	while (n == 0)
+	{
+		printf("Please enter a number which is greater than zero(0) ");
+		scanf("%d", &n);
+	}
 
 	if (n % 2 == 0)
 	{

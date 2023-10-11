@@ -8,7 +8,7 @@ int main(void)
 
 	while (n < 0)
 	{
-		printf("Please enter a number that is greater than 0(zero):  ");
+		printf("Please enter a number that is greater than  0(zero):  ");
 		scanf("%d", &n);
 	}
 

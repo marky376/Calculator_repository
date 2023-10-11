@@ -5,7 +5,7 @@ int main(void)
 	char operator;
 	double num1, num2;
 
-	printf("Enter an operator (+, -, *, /): ");
+	printf("Enter an operator (Addition\nSubtraction\nMultiplication\nDivision\nModulos\n");
 	scanf("%c", &operator);
 
 	printf("Enter two numbers: ");
@@ -13,18 +13,18 @@ int main(void)
 
 	switch (operator)
 	{
-		case '+':
+		case 'Addition':
 			printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2);
 			break;
-		case '-':
+		case 'Subtraction':
 			printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2);
 			break;
 
-		case '*':
+		case 'Multiplication':
 			printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2);
 			break;
 
-		case '/':
+		case 'Division':
 			if (num2 != 0)
 			{	
 				printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
@@ -35,6 +35,17 @@ int main(void)
 
 			}
 			break;
+		case 'Modulo':
+			if (num1 > num2)
+			{
+				printf("The modulus of %.2lf is %2.lf\n", num1, num1 % num2);
+			}
+			else
+			{
+				printf("num2 should be less than num1: ");
+				break;
+			}	
+
 
 		default :
 			printf("invalid operator.\n");
