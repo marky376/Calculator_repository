@@ -35,6 +35,7 @@ int main(void)
 }
 */
 
+/*
 int main(void)
 {
 	FILE* mercy;
@@ -46,4 +47,29 @@ int main(void)
 	fclose(mercy);
 
 	return (0);
+}*/
+
+#include <stdio.h>
+
+int main(void)
+{
+    FILE* mercy;
+    char text[1000];
+
+    mercy = fopen("mercy.txt", "r");
+    if (mercy == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    if (fgets(text, sizeof(text), mercy) != NULL) {
+        printf("%s", text);
+    } else {
+        printf("Error reading from file.\n");
+    }
+
+    fclose(mercy);
+
+    return 0;
 }
+
