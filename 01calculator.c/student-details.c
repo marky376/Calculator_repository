@@ -1,7 +1,7 @@
 #include <stdio.h>
-
+#include <unistd.h>
 int main() 
-i{
+{
 	char studentName[100];
 	char regNumber[20];
 	char lecturerName[100];
