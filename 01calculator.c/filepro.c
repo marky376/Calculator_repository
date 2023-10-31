@@ -13,7 +13,6 @@ int main(void)
 	return (0);
 }*/
 
-#include <stdio.h>
 /*
 int main(void)
 {
@@ -35,7 +34,7 @@ int main(void)
 }
 */
 
-/*
+
 int main(void)
 {
 	FILE* mercy;
@@ -47,10 +46,10 @@ int main(void)
 	fclose(mercy);
 
 	return (0);
-}*/
+}
 
 #include <stdio.h>
-
+/*
 int main(void)
 {
     FILE* mercy;
@@ -71,5 +70,5 @@ int main(void)
     fclose(mercy);
 
     return 0;
-}
+}*/
 
