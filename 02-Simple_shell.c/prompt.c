@@ -8,7 +8,7 @@ int main(void)
 	{
 		display_prompt();
 		user_input(command, sizeof(command));
-		execute_command(command);
+		execute_commands(command);
 	}
 
 	return (0);

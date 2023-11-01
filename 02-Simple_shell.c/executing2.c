@@ -2,11 +2,22 @@
 #include <sys/wait.h>
 
 
-void execute_command(const char *command __attribute__((unused)))
+void execute_commands(const char *command/* __attribute__((unused)*/)
 {
 	pid_t child_pid = fork();
 	int status, arg_count = 0;
 	char *tokn, *args[20];
+
+	tokn = strtok((char *)command, " ");
+	while (tokn != NULL)
+	{
+		args[arg_count++] = tokn;
+		tokn = strtok(NULL, " ");
+	}
+	args[arg_count] = NULL;
+
+	child_pid = fork();
+
 
 	if (child_pid == -1)
 	{
@@ -15,20 +26,10 @@ void execute_command(const char *command __attribute__((unused)))
 	}
 	else if (child_pid == 0)
 	{
-		tokn = strtok((char *)command, " ");
-		while (tokn != NULL)
+		if (execvp(args[0], args) == -1)
 		{
-			args[arg_count++] = tokn;
-			tokn = strtok(NULL, " ");
-		}
-
-		args[arg_count] = NULL;
-
-		execvp(args[0], args);
-
-		perror("execvp failed");
-
-		exit(EXIT_FAILURE);
+			perror("execvp failed");
+			exit(EXIT_FAILURE);
 
 	}
 	else
