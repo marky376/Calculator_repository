@@ -6,6 +6,7 @@ void execute_command(const char *command __attribute__((unused)))
 {
 	pid_t child_pid = fork();
 	int status;
+	char *tokn;
 
 	if (child_pid == -1)
 	{
@@ -27,4 +28,13 @@ void execute_command(const char *command __attribute__((unused)))
 
 		markm_print("Child process has finished\n");
 	}
+
+	tokn = strtok((char *)command, " ");
+	while (tokn != NULL)
+	{
+		args[arg_count++] = tokn;
+		tokn = strtok(NULL, " ");
+	}
+
+	args[arg_count] = NULL;
 }
