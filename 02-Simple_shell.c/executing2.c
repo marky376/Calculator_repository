@@ -5,8 +5,8 @@
 void execute_command(const char *command __attribute__((unused)))
 {
 	pid_t child_pid = fork();
-	int status;
-	char *tokn;
+	int status, arg_count = 0;
+	char *tokn, *args[20];
 
 	if (child_pid == -1)
 	{
@@ -15,10 +15,21 @@ void execute_command(const char *command __attribute__((unused)))
 	}
 	else if (child_pid == 0)
 	{
-		execl("/bin/ls", "ls", "-l", NULL);
+		tokn = strtok((char *)command, " ");
+		while (tokn != NULL)
+		{
+			args[arg_count++] = tokn;
+			tokn = strtok(NULL, " ");
+		}
 
-		perror("exec failed");
+		args[arg_count] = NULL;
+
+		execvp(args[0], args);
+
+		perror("execvp failed");
+
 		exit(EXIT_FAILURE);
+
 	}
 	else
 	{
@@ -28,13 +39,4 @@ void execute_command(const char *command __attribute__((unused)))
 
 		markm_print("Child process has finished\n");
 	}
-
-	tokn = strtok((char *)command, " ");
-	while (tokn != NULL)
-	{
-		args[arg_count++] = tokn;
-		tokn = strtok(NULL, " ");
-	}
-
-	args[arg_count] = NULL;
 }
