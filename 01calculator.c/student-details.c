@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <unistd.h>
-int main() 
+/*int main() 
 {
 	char studentName[100];
 	char regNumber[20];
-	char lecturerName[100];
+	char SchoolName[100];
 	char course[100];
+	char class[50];
 
     /* Prompt for and read student's name*/
 	printf("Enter student's name: ");
@@ -15,9 +16,9 @@ int main()
 	printf("Enter registration number: ");
 	fgets(regNumber, sizeof(regNumber), stdin);
 
-    /* Prompt for and read lecturer's name*/
-	printf("Enter lecturer's name: ");
-	fgets(lecturerName, sizeof(lecturerName), stdin);
+    /* Prompt for and read School's name*/
+	printf("Enter School's name: ");
+	fgets(SchoolName, sizeof(SchoolName), stdin);
 
     /* Prompt for and read course name*/
 	printf("Enter course name: ");
@@ -32,3 +33,4 @@ int main()
 
 	return 0;
 }
+*/
