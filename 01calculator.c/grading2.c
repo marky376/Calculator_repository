@@ -23,7 +23,7 @@ int main()
 	{
 		printf("This is a satisfactory result\n");
 	}
-	else if (n < 40)
+	else (n < 40)
 	{
 		printf("This is a PASS\n");
 	}
