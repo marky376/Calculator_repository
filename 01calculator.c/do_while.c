@@ -11,11 +11,11 @@ int main(void)
     {
 
         j = a * m;
-        a++;
+        a += 1;
         printf("%d\n", j);
 
 
-    }while (j < 100);
+    }while (j < 120);
     return 0;
 }
 

@@ -21,7 +21,7 @@ int main(void)
 		case 60 ... 69:
 			printf("The student has achieved a 'B' grade");
 			break;
-		case 70 ... 79:
+		case 70 ... 100:
 			printf("The student has achieved an 'A' grade");
 			break;
 		default:
@@ -30,3 +30,4 @@ int main(void)
 
 	return (0);
 }
+
