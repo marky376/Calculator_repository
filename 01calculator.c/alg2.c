@@ -8,7 +8,7 @@ int main(void)
 
 	for(int i = 0; i < 5; i++)
 	{
-		if (names[i] == "Mark")
+		if (name[i] == "Mark")
 		{
 			printf("Found\n");
 			return (0);
