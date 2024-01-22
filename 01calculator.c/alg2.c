@@ -10,7 +10,8 @@ int main(void)
 	{
 		if (names[i] == "Mark")
 		{
-			printf(
+			printf("Found\n");
+			return (0);
 		}
 	}
 }
