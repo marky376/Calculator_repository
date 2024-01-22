@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-
+/*
+- An algorithm to check if a certain name is in an array or list of names
+*/
 int main(void)
 {
 	char name[100][20] = {"Joseph", "Mark"};
