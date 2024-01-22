@@ -3,5 +3,5 @@
 
 int main(void)
 {
-	printf("I am back with a bang\n");
+	
 }
