@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	sting name[] = {"Joseph", "Mark"};
+	char name[100][20] = {"Joseph", "Mark"};
 	
 	for(int i = 0; i < 5; i++)
 	{
