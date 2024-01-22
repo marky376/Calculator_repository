@@ -3,12 +3,11 @@
 
 int main(void)
 {
-	char name[5] = {"Joseph", "Mark"};
-	char number[5] = {+254 678543, +254 098223};
-
+	sting name[] = {"Joseph", "Mark"};
+	
 	for(int i = 0; i < 5; i++)
 	{
-		if (strcmp(name[i] == "Mark"))
+		if (strcmp(name[i] , "Mark") == 0)
 		{
 			printf("Found\n");
 			return (0);
