@@ -10,7 +10,7 @@ int main(void)
 
         printf("%d\n", c);
 	
-	exit(0);
+	exit(0);/* Exiting the code and a
         printf("%d\n", ++c);/* pre-incrementing */
 
 
