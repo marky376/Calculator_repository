@@ -6,7 +6,7 @@ int main(void)
 	FILE* mercy;
 
 	mercy = fopen("mercy.txt", "w");
-	fprintf(mercy, "%s", "Fantastic stuff you're doing there at the University Of Nairobi");
+	fprintf(mercy, "%s", "Fantastic stuff you're doing there at the University Of Embu");
 
 	fclose(mercy);
 
