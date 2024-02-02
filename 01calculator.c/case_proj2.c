@@ -7,16 +7,17 @@ int main(void)
 	printf("Please enter student's score: ");
 	scanf("%d", &n);
 
-
+	// Check if the entered score is within the valid range
 	if (n >= 0 && n <= 100)
 	{
+		// Check the score range and print the corresponding achievement
 		if (n >= 0 && n <= 39)
 		{
 			printf("The student has achieved a 'Pull up'");
 		}
 		else if (n >= 40 && n <= 49)
 		{
-			printf("The student has achievde a 'Fail'");
+			printf("The student has achieved a 'Fail'");
 		}
 		else if (n >= 50 && n <= 59)
 		{	
@@ -37,5 +38,4 @@ int main(void)
 	}
 	
 	return (0);
-
 }
