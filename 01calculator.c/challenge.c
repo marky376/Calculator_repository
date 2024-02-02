@@ -1,3 +1,17 @@
+/**
+ * Reverses a string, excluding vowels.
+ * 
+ * This function takes a string as input and reverses it, while excluding any vowels present in the string.
+ * Vowels are defined as the characters 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'.
+ * The function modifies the input string in-place and returns a pointer to the modified string.
+ * 
+ * @param s The input string to be reversed.
+ * @return A pointer to the modified string.
+ */
+char *reverseExceptVowels(char *s)
+{
+    // Implementation details...
+}
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
