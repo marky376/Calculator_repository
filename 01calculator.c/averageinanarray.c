@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+/**
+ * Calculates the average of numbers in an array.
+ * 
+ * This program prompts the user to enter the size of an array and then
+ * prompts the user to enter the numbers. It calculates the average of
+ * the numbers and prints the result.
+ * 
+ * @return 0 if the program executed successfully, 1 if there was an error.
+ */
 int main()
 {
 	int size, i;
@@ -25,7 +34,7 @@ int main()
 		sum += numbers[i];
 	}
 
-	double average = size / sum;
+	double average = sum / size;
 
 	printf("The average among the lot is %.2lf\n", average);
 
