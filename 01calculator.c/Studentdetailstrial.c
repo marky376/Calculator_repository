@@ -2,6 +2,7 @@
 
 int main()
 {
+	// Declare variables to store user input
 	char SchoolName[100];
 	char StudentName[100];
 	char Class[50];
@@ -11,18 +12,23 @@ int main()
 	int a, b, c, d, e, f, g, h;
 	float average;
 
+	// Prompt the user to enter school name
 	printf("Please enter your school's name in caps: ");
 	fgets(SchoolName, sizeof(SchoolName), stdin);
 
+	// Prompt the user to enter student name
 	printf("Please enter your name in caps: ");
 	fgets(StudentName, sizeof(StudentName), stdin);
 
+	// Prompt the user to enter class
 	printf("Please enter your class in caps: ");
 	fgets(Class, sizeof(Class), stdin);
 
+	// Prompt the user to enter registration number
 	printf("Please enter your registration number in caps: ");
 	fgets(registrationNo, sizeof(registrationNo), stdin);
 
+	// Prompt the user to enter scores for different subjects
 	printf("Please enter your score for Mathematics: ");
 	scanf("%d", &a);
 
@@ -47,8 +53,10 @@ int main()
 	printf("Please enter your score for CRE: ");
 	scanf("%d", &h);
 
+	// Calculate the average score
 	average = ((a + b + c + d + e + f + g + h) / 8);
 
+	// Determine the grade and remark based on the average score
 	if (average >= 0 && average <= 39)
 	{
 		grade = 'E';
@@ -74,6 +82,8 @@ int main()
 		grade = 'A';
 		snprintf(remark, sizeof(remark), "Excellent");
 	}
+
+	// Print the results slip
 	printf("%s", SchoolName);
 	printf("RESULTS SLIP FOR: %s", StudentName);
 	printf("REGISTRATION NUMBER: %s", registrationNo);
