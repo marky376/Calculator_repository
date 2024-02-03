@@ -8,10 +8,13 @@ int main()
 	row = 6;
 	col = 6;
 
+	// Loop through each row
 	for (m = 1; m <= row; m++)
 	{
+		// Loop through each column
 		for (k = 1; k <= col; k++)
 		{
+			// Check if it is a border element
 			if (m == 1 || m == row || k == 1 || k == col)
 			{
 				printf("%c", '*');
@@ -20,9 +23,9 @@ int main()
 			{
 				printf(" ");
 			}
-		}printf("\n");
+		}
+		printf("\n");
 	}
 
 	return 0;
-
 }
