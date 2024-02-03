@@ -2,13 +2,13 @@
 
 int main(void)
 {
-	FILE* fptr;
-	fptr = (fopen("mark.txt", "w"));
+	FILE* fptr; // File pointer to handle file operations
+	fptr = (fopen("mark.txt", "w")); // Open the file "mark.txt" in write mode
 	
-	fprintf(fptr ,"please be happy that you've gone this far in your life.\n");
-	fprintf(fptr ,"And have some faith in you as well.\n");
+	fprintf(fptr ,"please be happy that you've gone this far in your life.\n"); // Write a line to the file
+	fprintf(fptr ,"And have some faith in you as well.\n"); // Write another line to the file
 
-	fclose(fptr);
+	fclose(fptr); // Close the file
 
 	return (0);	
 }
