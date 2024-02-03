@@ -7,17 +7,17 @@ int main()
 
 	row = 4;
 
-	for (j = 1; j <= row; j++)
+	for (j = 1; j <= row; j++) // loop for each row
 	{
-		for (m = 1; m <= row - j; m++)
+		for (m = 1; m <= row - j; m++) // loop for printing spaces
 		{
 			printf(" ");
 		}
-		for (i = 1; i <= 2 * j - 1; i++)
+		for (i = 1; i <= 2 * j - 1; i++) // loop for printing asterisks
 		{
 			printf("%c", '*');
 		}
-		printf("\n");
+		printf("\n"); // move to the next line after each row
 	}
 
 	return 0;
