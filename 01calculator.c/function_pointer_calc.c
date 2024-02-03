@@ -9,14 +9,17 @@ void subtract(int a, int b)
 {
 	printf("The subtraction is %d\n", a - b);
 }
+
 void multiply(int a, int b)
 {
 	printf("The multiplication is %d\n", a * b);
 }
+
 /**void divide(int a, int b)
 {
 	printf("The division is %d\n", a / b);
 }
+
 void modulus(int a, int b)
 {
 	printf("The modulus is %d\n", a % b);
@@ -38,4 +41,3 @@ int main(void)
 
 	return (0);
 }
-
