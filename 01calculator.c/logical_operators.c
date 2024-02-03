@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /*
 int main(void)
 {
@@ -17,6 +18,7 @@ int main(void)
 }
 */
 
+// Main function
 int main(void)
 {
 	int i, j;
@@ -27,6 +29,7 @@ int main(void)
 	printf("Enter another number: ");
 	scanf("%d", &j);
 
+	// Bitwise operations
 	printf("Bitwise and of the two numbers is: %d\n", i & j);
 	printf("Bitwise or of the two numbers is: %d\n", i | j);
 	printf("Bitwise exclusive OR is: %d\n", i ^ j);
@@ -34,8 +37,6 @@ int main(void)
 	printf("Bitwise binary right operator is: %d\n", i >> j);
 	printf("Bitwise ones complement of the first number is: %d\n", ~i);
 	printf("Bitwise ones compliment of the second number is: %d\n", ~j);
-
-
 
 	return 0;
 }
