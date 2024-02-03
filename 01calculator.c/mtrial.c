@@ -1,33 +1,23 @@
 #include <stdio.h>
-/*
+
 int main()
 {
-	FILE* mptr;
+	FILE* mptr; // File pointer to handle the file
+	char mp[100]; // Character array to store the contents of the file
 
-	mptr = fopen("mptr.txt", "w");
-	fprintf(mptr, "My name is Mark Munyao and i'm an aspiring Software engineer");
+	mptr = fopen("mptr.txt", "r"); // Open the file in read mode
 
-	fclose(mptr);
-
-	return (0);
-}*/
-int main()
-{
-	FILE* mptr;
-	char mp[100];
-
-	mptr = fopen("mptr.txt", "r");
-
-	if (mptr != NULL)
+	if (mptr != NULL) // Check if the file was opened successfully
 	{
-		while (fgets(mp, sizeof(mp), mptr) != NULL)
-			printf("%s", mp);
+		while (fgets(mp, sizeof(mp), mptr) != NULL) // Read each line of the file
+			printf("%s", mp); // Print the line to the console
 	}
 	else
 	{
-		printf("Error: can't read the file contents");
+		printf("Error: can't read the file contents"); // Print an error message if the file cannot be opened
 	}
-	fclose(mptr);
+
+	fclose(mptr); // Close the file
 
 	return (0);
 }
