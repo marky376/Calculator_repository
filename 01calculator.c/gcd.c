@@ -2,14 +2,14 @@
 
 int main()
 {
-	/* Variable declarations on the necessary variables to be used in the program*/
+	/* Variable declarations on the necessary variables to be used in the program */
 	int rem, num1, num2, gcd, big, small;
 
-	/* Giving user prompt to enter two value*/
+	/* Giving user prompt to enter two values */
 	printf("Please enter any two positive values: ");
 	scanf("%d %d", &num1, &num2);
 
-	/* Here we check which of the two numbers are greater than the other*/
+	/* Here we check which of the two numbers are greater than the other */
 	if (num1 > num2)
 	{
 		big = num1;
@@ -21,9 +21,9 @@ int main()
 		small = num1;
 	}
 
-	rem = big / small;/* determining whther the remainder is the same or not*/
+	rem = big / small; /* determining whether the remainder is the same or not */
 
-	/*If the remainder is not equal to 0 we now determine the GCD*/
+	/* If the remainder is not equal to 0 we now determine the GCD */
 	while (rem != 0)
 	{
 		big = small;
@@ -32,7 +32,7 @@ int main()
 	}
 
 	gcd = small;
-	printf("The GCD of %d and  %d is: %d", num1, num2, gcd);
+	printf("The GCD of %d and %d is: %d", num1, num2, gcd);
 
 	return 0;
 }
