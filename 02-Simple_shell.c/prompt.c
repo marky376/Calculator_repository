@@ -6,9 +6,9 @@ int main(void)
 
 	while (1)
 	{
-		display_prompt();
-		user_input(command, sizeof(command));
-		execute_commands(command);
+		display_prompt(); // Display the shell prompt
+		user_input(command, sizeof(command)); // Get user input
+		execute_commands(command); // Execute the user's command
 	}
 
 	return (0);
