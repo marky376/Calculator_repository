@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(void)
 {
         int c = 4;
 
-        printf("%d\n", c);
-        printf("%d\n", c++);/* post-incrementing */
+        printf("%d\n", c); // Print the initial value of c
+        printf("%d\n", c++); // Post-increment c and print the previous value
 
+        printf("%d\n", c); // Print the updated value of c
 
-        printf("%d\n", c);
-	
-	exit(0);/* Exiting the code and avoiding the rest of the code */
-        printf("%d\n", ++c);/* pre-incrementing */
+        exit(0); // Exit the program, skipping the rest of the code
 
+        printf("%d\n", ++c); // This line will not be executed
 
-	return (0);
-
+        return (0);
 }
