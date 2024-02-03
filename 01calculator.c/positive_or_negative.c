@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-/** main - main function to determine whether a number is -ve or +ve
- * Return: always 0
+/** 
+ * main - main function to determine whether a number is negative or positive
+ * 
+ * This program prompts the user to enter a number and determines whether it is negative, positive, or zero.
+ * 
+ * Return: Always 0
  */
 
 int main(void)
 {
-
 	double number;
 
 	printf("Enter any number: ");
@@ -30,6 +33,5 @@ int main(void)
 		scanf("%le", &number);
 	}
 
-	return (0);
+	return 0;
 }
-
