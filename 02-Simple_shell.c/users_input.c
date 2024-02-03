@@ -1,10 +1,11 @@
 #include "shell.h"
-void read_commands(char *command, size_t size)
-/*{
-	size_t len;
 
+void read_commands(char *command, size_t size)
+{
+	// Read user input from stdin
 	if (fgets(command, size, stdin) == NULL)
 	{
+		// Check if end of file is reached
 		if (feof(stdin))
 		{
 			markm_print("\n");
@@ -17,21 +18,18 @@ void read_commands(char *command, size_t size)
 		}
 	}
 
-	len = strcspn(command, "\n");
-
-
+	// Remove the newline character from the command
+	size_t len = strcspn(command, "\n");
 	if (len < size)
 	{
 		command[len] = '\0';
 	}
-
 	else
 	{
 		markm_print("Input too long.\n");
 		exit(EXIT_FAILURE);
 	}
-
-}*/
-{
-	read_commands(command, size);
 }
+
+// Call the read_commands function with the provided arguments
+read_commands(command, size);
