@@ -10,7 +10,7 @@ int main()
 	
 	cout <<"Hello,there happy coding!!" ;
 
-	cout
+	cout <<
 	cout <<"\n";
 	
 	return 0;
