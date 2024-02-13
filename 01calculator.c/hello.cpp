@@ -8,7 +8,7 @@ int main()
 	cout << "Please enter your name: " ;
 	cin >> name;
 	
-	cout <<"Hello,there happy coding!!" ;
+	cout <<"Hello,there happy coding!!\n" ;
 
 	cout << name;
 	cout <<"\n";
