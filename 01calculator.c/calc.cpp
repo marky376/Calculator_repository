@@ -7,8 +7,10 @@ int main()
 	char sign;
 
 
-	sign = ['*', '+', '-', '/', '%'];
 
 	cout << "Please engter value for a: ";
+	cin >> a;
+
+	cout << "Please
 	
 }
