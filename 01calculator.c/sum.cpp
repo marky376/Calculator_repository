@@ -15,7 +15,7 @@ int main()
 	c = a + b;
 
 
-	cout <<"And the sum of value a and value b is : %d <<c<<";
+	cout <<"And the sum of value a and value b is";
 
 	
 }
