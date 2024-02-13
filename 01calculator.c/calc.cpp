@@ -8,7 +8,7 @@ int main()
 
 
 
-	cout << "Please engter value for a: ";
+	cout << "Please enter value for a: ";
 	cin >> a;
 
 	cout << "Please
