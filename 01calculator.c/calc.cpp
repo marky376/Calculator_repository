@@ -5,4 +5,8 @@ int main()
 {
 	int a, b;
 	char sign[100];
+
+
+	sign = ['*', '+', '-', '/', '%'];
+	
 }
