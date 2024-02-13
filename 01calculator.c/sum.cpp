@@ -15,6 +15,6 @@ int main()
 	c = a + b;
 
 
-	cout <<"And the sum of v alue
+	cout <<"And the sum of a alue
 	
 }
