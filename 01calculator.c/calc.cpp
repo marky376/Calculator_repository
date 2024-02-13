@@ -11,6 +11,7 @@ int main()
 	cout << "Please enter value for a: ";
 	cin >> a;
 
-	cout << "Please
+	cout << "Please enter value for b; ";
+	
 	
 }
