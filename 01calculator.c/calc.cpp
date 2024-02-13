@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	int a, b;
+	int a, b, c;
 	char sign;
 
 
@@ -14,12 +14,13 @@ int main()
 	cout << "Please enter value for b; ";
 	cin >> b;
 
-
-	switch (sign):
+	cout << "Please enter the sign to be used: ";
+	cin >> sign;
+	switch (sign)
 		case '+':
 			int c;
 			c = a + b;
-			cout << c"\n";
+			cout << c;
 
 
 	
