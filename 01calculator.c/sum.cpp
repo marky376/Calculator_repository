@@ -16,6 +16,8 @@ int main()
 
 
 	cout <<"And the sum of value a and value b is ";
+
+	cout << c ;
 	
 	
 }
