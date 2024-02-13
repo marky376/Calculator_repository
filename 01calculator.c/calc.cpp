@@ -16,6 +16,11 @@ int main()
 
 
 	switch (sign):
+		case '+':
+			int c;
+			c = a + b;
+			cout << c"\n";
+
 
 	
 	
