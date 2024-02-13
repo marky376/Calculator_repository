@@ -12,6 +12,11 @@ int main()
 	cin >> a;
 
 	cout << "Please enter value for b; ";
+	cin >> b;
+
+
+	switch (sign):
+
 	
 	
 }
