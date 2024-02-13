@@ -8,5 +8,7 @@ int main()
 
 
 	sign = ['*', '+', '-', '/', '%'];
+
+	cout << "Please engter value for a: ";
 	
 }
