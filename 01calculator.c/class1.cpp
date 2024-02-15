@@ -24,7 +24,7 @@ class Room
         {
             return length * breadth * height;
         }
-}
+};
 
 int main()
 {
