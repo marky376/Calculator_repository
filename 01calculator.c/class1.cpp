@@ -22,6 +22,6 @@ class Room
         }
         double calculateVolume()
         {
-            return length * breadth * 
+            return length * breadth * height;
         }
 }
