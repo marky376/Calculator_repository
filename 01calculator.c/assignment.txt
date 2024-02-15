@@ -1,0 +1,6 @@
+Write a c++  program that will 
+
+1. Implement a class called employee that has private member variables name, employeeId and salary. Includde member functions to calculate and set SALARY based on employees performance
+2. Implement a class called Shape with virtual member functions for calculating Area and perimeter. Derive classes such as a circle, rectangle and triangle from shape class (INHERITANCE) and override virtual functions accoringly.
+3 . Implement a class called date that has private member variables for day, month and year. Includde member functions to set andd get these variables as well as to validate if the date is valid.
+ For the above draw a flowchart diagram showing how decisions would be made form the programs written.
