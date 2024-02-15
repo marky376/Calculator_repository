@@ -23,6 +23,8 @@ int main()
 			cout << c;
 
 
-	
+		case '-':
+			c = a - b;
+			cout << c;
 	
 }
