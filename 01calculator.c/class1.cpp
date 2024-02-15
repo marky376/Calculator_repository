@@ -25,3 +25,11 @@ class Room
             return length * breadth * height;
         }
 }
+
+int main()
+{
+    Room room1;
+    room1.intData(42.5,30.8, 19.2)
+    cout << "Area of room = "<<room1.calculateArea()<< endl;
+    cout << "Volume of the room"
+}
