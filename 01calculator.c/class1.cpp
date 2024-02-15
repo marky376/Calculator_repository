@@ -16,5 +16,9 @@ class Room
             height = hgt;
         }
 
-        double
+        double calculateArea()
+        {
+            return length * breadth;
+        }
+        double calculate
 }
