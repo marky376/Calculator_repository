@@ -1,5 +1,5 @@
 #include <iostream>
-sing namespace std;
+using namespace std;
 
 // Implement a class called employee that has private member variables name, employeeId and salary. Includde member functions to calculate and set SALARY based on employees performance
 class Employee
