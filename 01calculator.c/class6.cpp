@@ -23,5 +23,7 @@ int main()
 {
 	Sphere s(5);
 
-	cout << "The volume of the sphere is " << s.getVolume() << " cubic cm." << 
+	cout << "The volume of the sphere is " << s.getVolume() << " cubic cm." << endl;
+
+	return 0;	
 }
