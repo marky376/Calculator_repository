@@ -20,6 +20,7 @@ class Sphere
 		}
 
 };
+// A main function to test the class Sphere
 int main()
 {
 	Sphere s(5);
