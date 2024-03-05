@@ -14,7 +14,7 @@ class Sphere
 			radius = r;
 		}
 
-		double getVolume()
+		double getVolume()// Finding or working out the volume of the given sphere
 		{
 			return ( 4/3 * 3.14 * radius * radius * radius);
 		}
