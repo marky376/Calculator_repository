@@ -23,3 +23,11 @@ class RightTriangle
 
 };
 // A main function to test the class
+
+int main()
+{
+	RightTriangle rl(12, 5);
+	cout << "The length of the third side is " << rl.GetThirdSide() << " cm." << endl;
+
+	return 0;
+}
