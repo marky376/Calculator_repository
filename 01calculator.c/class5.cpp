@@ -22,4 +22,4 @@ class RightTriangle
 		}
 
 };
-
+// A main function to test the class
