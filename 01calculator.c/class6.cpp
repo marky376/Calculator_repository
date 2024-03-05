@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
 
-class Spheres
+class Sphere
 {
 	private:
 		double radius;
+		
 	
 
 	public:
