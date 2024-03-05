@@ -15,5 +15,11 @@ class RightTriangle
 			height = h;
 		}
 
-		double
-}
+		double GetThirdSide()
+		{
+			return (sqrt(base * base + height * height));
+
+		}
+
+};
+
