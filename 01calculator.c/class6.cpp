@@ -21,5 +21,7 @@ class Spheres
 };
 int main()
 {
+	Sphere s(5);
 
+	cout << "The volume of the sphere is " << s.getVolume() << " cubic cm." << 
 }
