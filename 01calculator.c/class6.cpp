@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Sphere
+class Sphere//Main Class
 {
 	private:
 		double radius;
