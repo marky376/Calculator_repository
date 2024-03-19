@@ -4,32 +4,30 @@ using namespace std;
 
 class Prim
 {
-	public:
+	private:
 		double num1;
 		double num2;
+	public:
+		double Prim()
 
-		double getSum(double a, double b)
+
+		double getSum()
 		{
-			a = num1;
-			b = num2;
 
 			return a + b;
 		}
-		double getAverage(double a, double b)
+		double getAverage()
 		{
-			a = num1;
-			b = num2;
 
-			return ((a + b)/2)
+			return ((a + b)/2);
 		}
-
 };
 
 int main(void)
 {
 	Prim prim;
-	cin >> num1 >>;
-	cin >> num2 >>;
+	cin >> prim.num1 >>;
+	cin >> prim.num2 >>;
 
 	cout <<"The sum is" << prim.getSum() << endl;
 	cout <<"The average is" << prim.getAverage() << endl;
