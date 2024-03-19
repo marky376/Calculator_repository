@@ -1,6 +1,6 @@
 #include <iostream> // The Preprocessor directive 
 
-using namespace std;
+using namespace std; // A tool for avoiding the use of 
 
 int main(void)
 {
