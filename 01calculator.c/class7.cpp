@@ -8,9 +8,9 @@ class Prim
 		double num1;
 		double num2;
 
-		getSum(double a, double b)
+		getSum()
 		{
-			a = num1;
+			
 			b = num2;
 
 			return a + b;
