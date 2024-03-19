@@ -10,6 +10,8 @@ class Prim
 
 		double getSum()
 		{
+			a = num1;
+			b = num2;
 
 			return a + b;
 		}
