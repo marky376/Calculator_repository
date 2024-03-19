@@ -1,4 +1,4 @@
-#include <iostream> // The Preprocessor 
+#include <iostream> // The Preprocessor directive 
 
 using namespace std;
 
