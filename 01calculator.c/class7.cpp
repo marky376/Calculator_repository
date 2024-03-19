@@ -10,8 +10,6 @@ class Prim
 
 		getSum()
 		{
-			
-			b = num2;
 
 			return a + b;
 		}
