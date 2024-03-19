@@ -8,7 +8,7 @@ class Prim
 		double num1;
 		double num2;
 	public:
-		double Prim(double a, double b)
+		Prim(double a, double b)
 		{
 			num1 = a;
 			num2 = b;
