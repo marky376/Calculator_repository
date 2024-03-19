@@ -5,10 +5,11 @@ using namespace std;
 int main(void)
 {
 	int i = 0;
-	while (i <= 10)
+	int counter = 0;
+	while (counter <= 10)
 	{
 		cout << i <<endl;
-		i++;
+		counter++;
 	}
 
 	return 0;
