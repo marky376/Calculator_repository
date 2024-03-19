@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Student // The super
+class Student // The super, base
 {
 	private:
 		int regNo; // The data type to be used here
