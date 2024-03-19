@@ -15,7 +15,7 @@ class Student // The super, base or parent class
 
 };
 
-class Full-time: public Student
+class Full-time: public Student // The sub
 {
 
 
