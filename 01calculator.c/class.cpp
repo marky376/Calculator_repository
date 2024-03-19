@@ -3,6 +3,7 @@ using namespace std;
 
 class Room
 {
+	public:
 		double height;
 		double length;
 		double breadth;
