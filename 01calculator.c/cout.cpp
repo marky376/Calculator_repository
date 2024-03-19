@@ -2,7 +2,7 @@
 
 using namespace std; // A tool for avoiding the use of :: 
 
-int main(void) //The Main funct 
+int main(void) //The Main function 
 {
 	cout <<"I enjoy prgramming"<<endl ;
 	
