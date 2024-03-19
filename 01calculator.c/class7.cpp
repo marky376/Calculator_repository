@@ -17,7 +17,8 @@ class Prim
 		}
 		double getAverage(double a, double b)
 		{
-
+			a = num1;
+			b = num2;
 
 			return ((a + b)/2)
 		}
