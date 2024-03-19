@@ -8,14 +8,14 @@ class Prim
 		double num1;
 		double num2;
 
-		double getSum()
+		double getSum(double a, double b)
 		{
 			a = num1;
 			b = num2;
 
 			return a + b;
 		}
-		double getAverage()
+		double getAverage(double a, double b)
 		{
 
 
