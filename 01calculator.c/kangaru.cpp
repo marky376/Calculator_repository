@@ -17,9 +17,8 @@ class Student
 			cout << "What is your name? " << endl;
 			cin >> Name;
 
-			cout
+			cout << "What is your age? " << endl;
 		}
 
 		
-}
-
+};
