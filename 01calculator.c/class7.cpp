@@ -15,8 +15,7 @@ class Prim
 		}
 		getAverage()
 		{
-			a = num1;
-			b = num2;
+
 
 			return ((a + b)/2)
 		}
