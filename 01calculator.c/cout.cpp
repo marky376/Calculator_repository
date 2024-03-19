@@ -4,6 +4,7 @@ using namespace std;
 
 int main(void)
 {
-	cout <<"I enjoy prgramming"<<endl
+	cout <<"I enjoy prgramming"<<endl ;
+
 }
 
