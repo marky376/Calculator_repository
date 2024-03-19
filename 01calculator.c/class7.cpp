@@ -28,9 +28,9 @@ class Prim
 
 int main(void)
 {
-	Prim prim;
-	cin >> prim.num1 >>;
-	cin >> prim.num2 >>;
+
+	cin >> Prim.num1 >>;
+	cin >> Prim.num2 >>;
 
 	cout <<"The sum is" << prim.getSum() << endl;
 	cout <<"The average is" << prim.getAverage() << endl;
