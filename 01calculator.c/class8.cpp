@@ -7,7 +7,7 @@ class Student
 	private:
 		int regNo;
 
-		int getregNo() //
+		int getregNo() // The method to use in this class
 		{
 			
 
