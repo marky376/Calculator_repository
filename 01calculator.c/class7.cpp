@@ -31,5 +31,9 @@ int main(void)
 	cin >> num1 >>;
 	cin >> num2 >>;
 
+	cout <<"The sum is" << prim.getSum() << endl;
+	cout <<"The average is" << prim.getAverage() << endl;
+
+	return 0;
 }
 
