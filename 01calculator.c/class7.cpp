@@ -10,8 +10,8 @@ class Prim
 	public:
 		double Prim(double a, double b)
 		{
-			a = num1;
-			b = num2;
+			num1 = a;
+			num2 = b;
 
 		}
 		double getSum()
