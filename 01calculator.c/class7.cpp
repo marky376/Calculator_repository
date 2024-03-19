@@ -25,3 +25,11 @@ class Prim
 
 };
 
+int main(void)
+{
+	Prim prim;
+	cin >> num1 >>;
+	cin >> num2 >>;
+
+}
+
