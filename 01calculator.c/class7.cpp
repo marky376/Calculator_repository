@@ -15,5 +15,13 @@ class Prim
 
 			return a + b;
 		}
+		getAverage(double a, double b)
+		{
+			a = num1;
+			b = num2;
 
-}
+			return ((a + b)/2)
+		}
+
+};
+
