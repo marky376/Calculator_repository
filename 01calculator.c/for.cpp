@@ -12,7 +12,7 @@ int main()
 	{
 		for (col = 0; col <= row; col++)
 		{
-			cout << "%d", i << endl;
+			cout <<  i << endl;
 			i++;
 		}
 
