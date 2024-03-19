@@ -12,5 +12,8 @@ class Prim
 		{
 			a = num1;
 			b = num2;
+
+			return a + b;
 		}
+
 }
