@@ -13,7 +13,7 @@ class Prim
 
 			return a + b;
 		}
-		getAverage(double a, double b)
+		getAverage()
 		{
 			a = num1;
 			b = num2;
