@@ -4,5 +4,11 @@ using namespace std;
 
 int main()
 {
+	int row;
+
 	
+	for (row = 0; i <=5; i++)
+	{
+		cout
+	}	
 }
