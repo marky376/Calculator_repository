@@ -8,9 +8,12 @@ class Prim
 		double num1;
 		double num2;
 	public:
-		double Prim()
+		double Prim(double a, double b)
+		{
+			a = num1;
+			b = num2;
 
-
+		}
 		double getSum()
 		{
 
