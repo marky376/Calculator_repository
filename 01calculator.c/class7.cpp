@@ -8,12 +8,12 @@ class Prim
 		double num1;
 		double num2;
 
-		getSum()
+		double getSum()
 		{
 
 			return a + b;
 		}
-		getAverage()
+		double getAverage()
 		{
 
 
