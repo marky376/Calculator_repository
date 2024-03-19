@@ -28,10 +28,12 @@ class Prim
 
 int main(void)
 {
-	Prim prim1();
-
-	cin >> num1 >>;
-	cin >> num2 >>;
+	double num1, num2;
+	
+	cout << "Enter num1"<<endl;
+	cin >> num1;
+	cout << "Enter num2"<<endl;
+	cin >> num2;
 
 	cout <<"The sum is" << Prim.getSum() << endl;
 	cout <<"The average is" << Prim.getAverage() << endl;
