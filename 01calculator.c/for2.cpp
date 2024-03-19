@@ -10,4 +10,6 @@ int main(void)
 		cout << i <<endl;
 		i++;
 	}
+
+	return 0;
 }
