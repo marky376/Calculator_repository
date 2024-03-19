@@ -4,7 +4,7 @@ using namespace std; // A tool for avoiding the use of ::
 
 int main(void) //The Main function 
 {
-	cout <<"I enjoy prgramming"<<endl ; // The output 
+	cout <<"I enjoy prgramming"<<endl ; // The output on  
 	
 	return 0;
 }
