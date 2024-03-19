@@ -5,7 +5,7 @@ using namespace std;
 class Student
 {
 	private:
-		int regNo;
+		int regNo; // The data type to be used here
 
 		int getregNo() // The method to use in this class
 		{
