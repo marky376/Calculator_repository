@@ -28,6 +28,7 @@ class Prim
 
 int main(void)
 {
+	Prim prim1();
 
 	cin >> num1 >>;
 	cin >> num2 >>;
