@@ -37,7 +37,7 @@ int main(void)
 		
 	Prim prim1(num1, num2);
 	cout <<"The sum is " << prim1.getSum() << endl;
-	cout <<"The average is" << prim1.getAverage() << endl;
+	cout <<"The average is " << prim1.getAverage() << endl;
 	
 
 	return 0;
