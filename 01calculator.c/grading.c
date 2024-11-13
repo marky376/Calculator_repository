@@ -24,23 +24,23 @@ int gradingchecker(int n)
 	// Grade the student's performance based on the score
 	if (n >= 70)
 	{
-		printf("The student's performance is excellent because the score is: %d", n);
+		printf("The student's performance is excellent because the score is: %d\n", n);
 	}
 	else if (n >= 60)
 	{
-		printf("The student's performance is good because the score is: %d", n);
+		printf("The student's performance is good because the score is: %d\n", n);
 	}
 	else if (n >= 50)
 	{
-		printf("The student's performance is average because the score is: %d", n);
+		printf("The student's performance is average because the score is: %d\n", n);
 	}
 	else if (n >= 40)
 	{
-		printf("The student's performance is below average because the score is: %d", n);
+		printf("The student's performance is below average because the score is: %d\n", n);
 	}
 	else if (n < 40)
 	{
-		printf("The student's performance is a PASS because the score is: %d", n);
+		printf("The student's performance is a PASS because the score is: %d\n", n);
 	}
 }
 

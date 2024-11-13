@@ -20,5 +20,6 @@ int main(void)
 	scanf("%d", &radius);
 
 	printf("The area of the given circle is: %f", pi * radius * radius);
+	printf("\n");
 	return 0;
 }
