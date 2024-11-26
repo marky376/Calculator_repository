@@ -60,6 +60,12 @@ def create_grid(data):
         grid[row["y"]][row["x"]] = row["char"]
     return grid
 
+# Helper function to invert the grid upside down
+def invert_grid_upside_down(grid):
+    if not grid:
+        return []
+    return grid[::-1]  # Reverse the order of the rows
+
 # Helper function to print the 2D grid
 def print_grid(grid):
     if not grid:
@@ -75,8 +81,13 @@ def decode_secret_message(url):
     data = parse_data(document_text)
     print(f"Parsed data:\n{data}")  # Debug statement
     grid = create_grid(data)
-    print("Printing grid...")  # Debug statement
-    print_grid(grid)
+    print("Printing original grid...")  # Debug statement
+    # print_grid(grid)
+    
+    # Invert and print the grid upside down
+    inverted_grid = invert_grid_upside_down(grid)
+    print("Printing upside-down inverted grid...")  # Debug statement
+    print_grid(inverted_grid)
 
 # Example usage
 url = "https://docs.google.com/document/d/e/2PACX-1vQGUck9HIFCyezsrBSnmENk5ieJuYwpt7YHYEzeNJkIb9OSDdx-ov2nRNReKQyey-cwJOoEKUhLmN9z/pub"
