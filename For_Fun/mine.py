@@ -1,6 +1,8 @@
 from vpython import *
 import numpy as np
 from scipy.integrate import odeint
+import imageio
+import os
 
 # Constants
 g = 9.81  # acceleration due to gravity
@@ -37,9 +39,11 @@ scene = canvas(title='Double Pendulum with Charged Masses', width=800, height=60
 
 # Create the pendulum bobs
 bob1 = sphere(pos=vector(L1*np.sin(theta1_0), -L1*np.cos(theta1_0), 0), radius=0.1, color=color1, make_trail=True)
-bob2 = sphere(pos=vector(L1*np.sin(theta1_0) + L2*np.sin(theta2_0), -L1*np.cos(theta1_0) - L2*np.cos(theta2_0), 0), radius=0.1, color=color2, make_trail=True)
+bob2 = sphere(pos=vector(L1*np.sin(theta1_0) + L2*np.sin(theta2_0), 
+                        -L1*np.cos(theta1_0) - L2*np.cos(theta2_0), 0),
+              radius=0.1, color=color2, make_trail=True)
 
-# Create the electric field lines
+# Create the electric field line
 field_line = arrow(pos=bob1.pos, axis=bob2.pos - bob1.pos, shaftwidth=0.01, color=color2)
 
 # Create the labels
@@ -52,13 +56,27 @@ label4 = label(pos=vector(0, -0.1, 0), text='Time Elapsed: ', box=False, height=
 def equations_of_motion(state, t):
     theta1, dtheta1, theta2, dtheta2 = state
     
-    # Calculate the electric force
-    r = L2 * np.array([np.sin(theta2) - np.sin(theta1), np.cos(theta1) - np.cos(theta2)])
-    F_electric = k * q1 * q2 * r / np.linalg.norm(r)**3
+    # Correct displacement vector between bobs
+    r_x = L2 * np.sin(theta2)
+    r_y = -L2 * np.cos(theta2)
+    r = np.array([r_x, r_y])
+    r_mag = np.linalg.norm(r)
     
-    # Calculate the accelerations
-    a1 = (-g * np.sin(theta1) - b * dtheta1 + F_electric[0] / m1) / L1
-    a2 = (-g * np.sin(theta2) - b * dtheta2 + F_electric[1] / m2) / L2
+    # Electric force components
+    F_electric = (k * q1 * q2 * r) / (r_mag**3) if r_mag != 0 else np.zeros(2)
+    
+    # Torque terms for each pendulum
+    torque1 = -m1 * g * L1 * np.sin(theta1)  # Gravity torque on first bob
+    torque1 += (k * q1 * q2 * L1 * np.sin(theta2 - theta1)) / L2  # Electric torque contribution
+    torque1 -= b * dtheta1 * L1  # Damping torque
+    
+    torque2 = -m2 * g * L2 * np.sin(theta2)  # Gravity torque on second bob
+    torque2 += (k * q2 * q1 * L2 * np.sin(theta2 - theta1)) / L1  # Electric torque contribution (opposite direction)
+    torque2 -= b * dtheta2 * L2  # Damping torque
+    
+    # Angular accelerations (divided by moment of inertia)
+    a1 = torque1 / (m1 * L1**2)
+    a2 = torque2 / (m2 * L2**2)
     
     return [dtheta1, a1, dtheta2, a2]
 
@@ -66,27 +84,49 @@ def equations_of_motion(state, t):
 state0 = [theta1_0, dtheta1_0, theta2_0, dtheta2_0]
 solution = odeint(equations_of_motion, state0, t)
 
-# Animate the simulation
+# Animation and collision handling
+frames = []  # To store frames for video
+boundary_y = -5.0  # Fixed boundary at y = -5.0
+
 for i in range(len(t)):
     theta1, dtheta1, theta2, dtheta2 = solution[i]
     
-    # Update the positions of the bobs
-    bob1.pos = vector(L1*np.sin(theta1), -L1*np.cos(theta1), 0)
-    bob2.pos = vector(L1*np.sin(theta1) + L2*np.sin(theta2), -L1*np.cos(theta1) - L2*np.cos(theta2), 0)
+    # Update positions
+    bob1.pos = vector(L1 * np.sin(theta1), -L1 * np.cos(theta1), 0)
+    bob2.pos = vector(
+        bob1.pos.x + L2 * np.sin(theta2),
+        bob1.pos.y - L2 * np.cos(theta2),
+        0
+    )
     
-    # Update the electric field line
+    # Collision detection with boundary (y-axis)
+    if bob1.pos.y < boundary_y:
+        dtheta1 *= -0.8  # Reverse angular velocity with damping
+    if bob2.pos.y < boundary_y:
+        dtheta2 *= -0.8
+    
+    # Update electric field line
     field_line.pos = bob1.pos
     field_line.axis = bob2.pos - bob1.pos
     
-    # Update the labels
-    label1.text = 'Total Energy: {:.2f} J'.format(0.5*m1*L1**2*dtheta1**2 + 0.5*m2*L2**2*dtheta2**2 + m1*g*L1*np.cos(theta1) + m2*g*L2*np.cos(theta2) + k*q1*q2/np.linalg.norm(bob2.pos - bob1.pos))
-    label2.text = 'Angle 1: {:.2f} degrees'.format(np.degrees(theta1))
-    label3.text = 'Angle 2: {:.2f} degrees'.format(np.degrees(theta2))
-    label4.text = 'Time Elapsed: {:.2f} s'.format(t[i])
+    # Update labels
+    # Compute energy terms
+    ke1 = 0.5 * m1 * (L1 * dtheta1)**2
+    ke2 = 0.5 * m2 * (L2 * dtheta2)**2
+    pe_grav = m1 * g * L1 * np.cos(theta1) + m2 * g * (L1 * np.cos(theta1) + L2 * np.cos(theta2))
+    pe_electric = (k * q1 * q2) / (L2)  # Since distance is fixed at L2
+    total_energy = ke1 + ke2 + pe_grav + pe_electric
     
-    # Save the simulation as a video
+    label1.text = f'Total Energy: {total_energy:.2f} J'
+    label2.text = f'Angle 1: {np.degrees(theta1):.2f}°'
+    label3.text = f'Angle 2: {np.degrees(theta2):.2f}°'
+    label4.text = f'Time Elapsed: {t[i]:.2f}s'
+    
+    # Capture frame
+    img = scene.screenshot()
+    frames.append(img)
     rate(60)
 
-# Save the simulation as a video
-video_capture = scene.waitfor('click')
-video_capture.capture('double_pendulum_video.mp4')
+# Save the video using imageio
+os.makedirs('frames', exist_ok=True)
+imageio.mimsave('double_pendulum_video.mp4', frames, fps=60)
