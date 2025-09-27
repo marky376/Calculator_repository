@@ -1,94 +1,42 @@
 import requests
-import pandas as pd
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
 
-# Helper function to fetch the document from a given URL
-def fetch_document(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+def decode_message(source_url):
+    """Fetches a table from a webpage and prints an ASCII image based on (x, y, char) triplets."""
+    # Get and parse the HTML content
+    page_html = requests.get(source_url, timeout=10).text
+    parser = BeautifulSoup(page_html, "html.parser")
 
-        document_text = soup.get_text(separator="\n")
-        return document_text 
-    except requests.exceptions.HTTPError as http_err:
-        print(f"HTTP error occurred: {http_err}")
-    except requests.exceptions.RequestException as req_err:
-        print(f"Request error occurred: {req_err}")
-    return None
+    # Extract all rows and convert them into [x, char, y] format
+    entries = []
+    for tr in parser.find_all("tr"):
+        cells = [td.text.strip() for td in tr.find_all("td")]
+        if len(cells) == 3:
+            entries.append(cells)
 
-# Helper function to parse the document text into a DataFrame
-def parse_data(document_text):
-    data = []
-    lines = document_text.splitlines()
-    
-    # Find the start index after the headers
-    start_index = 0
-    for i, line in enumerate(lines):
-        if line.strip() == "x-coordinate":
-            start_index = i + 1  # Start parsing after this line
-            break
-    
-    # Parse the data lines
-    for i in range(start_index, len(lines)):
-        try:
-            # Read the x-coordinate
-            x = int(lines[i].strip())
-            # Read the character on the next line
-            char = lines[i + 1].strip()
-            # Read the y-coordinate on the next line
-            y = int(lines[i + 2].strip())
-            data.append((x, y, char))
-            # Move the index forward by 3 to skip to the next set of data
-            i += 2  # This will be incremented in the for loop
-        except (ValueError, IndexError) as e:
-            print(f"Skipping line due to error: {e} - Line content: {lines[i:i+3]}")
-            continue
-    
-    return pd.DataFrame(data, columns=["x", "y", "char"])
+    # Skip header and filter valid coordinates
+    coord_map = {}
+    for x_str, ch, y_str in entries[1:]:
+        if x_str.isdigit() and y_str.isdigit():
+            x, y = int(x_str), int(y_str)
+            coord_map[(x, y)] = ch
 
-# Helper function to create a 2D grid from the DataFrame
-def create_grid(data):
-    if data.empty:
-        print("No data to display.")  # Debug statement
-        return []
-    data['x'] = data['x'].astype(int)
-    data['y'] = data['y'].astype(int)
-    max_x, max_y = data["x"].max(), data["y"].max()
-    grid = [[" " for _ in range(max_x + 1)] for _ in range(max_y + 1)]
-    for _, row in data.iterrows():
-        grid[row["y"]][row["x"]] = row["char"]
-    return grid
+    # Determine the size of the output grid
+    width = max(x for x, _ in coord_map) + 1
+    height = max(y for _, y in coord_map) + 1
 
-# Helper function to invert the grid upside down
-def invert_grid_upside_down(grid):
-    if not grid:
-        return []
-    return grid[::-1]  # Reverse the order of the rows
+    # Initialize a blank grid
+    output = [[" " for _ in range(width)] for _ in range(height)]
 
-# Helper function to print the 2D grid
-def print_grid(grid):
-    if not grid:
-        print("Empty grid, nothing to display.")
-    for row in grid:
-        print("".join(row))
+    # Place characters into the grid
+    for (x, y), ch in coord_map.items():
+        output[height - 1 - y][x] = ch  # Flip y to match top-down view
 
-# Main function that takes the URL and prints the grid
-def decode_secret_message(url):
-    print(f"Fetching document from URL: {url}")  # Debug statement
-    document_text = fetch_document(url)
-    print("Document fetched successfully. Parsing data...")  # Debug statement
-    data = parse_data(document_text)
-    print(f"Parsed data:\n{data}")  # Debug statement
-    grid = create_grid(data)
-    print("Printing original grid...")  # Debug statement
-    # print_grid(grid)
-    
-    # Invert and print the grid upside down
-    inverted_grid = invert_grid_upside_down(grid)
-    print("Printing upside-down inverted grid...")  # Debug statement
-    print_grid(inverted_grid)
+    # Display the ASCII image
+    for line in output:
+        print("".join(line))
 
-# Example usage
-url = "https://docs.google.com/document/d/e/2PACX-1vQGUck9HIFCyezsrBSnmENk5ieJuYwpt7YHYEzeNJkIb9OSDdx-ov2nRNReKQyey-cwJOoEKUhLmN9z/pub"
-decode_secret_message(url)
+
+if __name__ == "__main__":
+    doc_link = "https://docs.google.com/document/d/e/2PACX-1vQGUck9HIFCyezsrBSnmENk5ieJuYwpt7YHYEzeNJkIb9OSDdx-ov2nRNReKQyey-cwJOoEKUhLmN9z/pub"
+    decode_message(doc_link)
