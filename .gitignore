@@ -1,0 +1,25 @@
+# Compiled executables
+*.out
+a.out
+calculator
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Python virtual environments
+venv/
+myenv/
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+*.dSYM/
