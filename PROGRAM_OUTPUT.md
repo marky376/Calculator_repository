@@ -39,12 +39,12 @@ Enter Choice: 0 for add
  2 for multiply
 The multiplication is 150
 ```
-**Result**: 15 × 10 = 150 ✓
+**Result**: 15 * 10 = 150 ✓
 
 ## Summary
 All three operations completed successfully:
 - Addition: 15 + 10 = 25
 - Subtraction: 15 - 10 = 5
-- Multiplication: 15 × 10 = 150
+- Multiplication: 15 * 10 = 150
 
 The program demonstrates the use of function pointers in C to create a simple calculator interface.
